@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "id": "02dd",
+      "name": "bfg",
+      "price": 0,
+      "category": "alo",
+      "quantity": 10,
+      "detail": "fghjfgvc"
+    },
+    {
+      "id": "d4a7",
+      "name": "bfg",
+      "price": 6,
+      "category": "alo",
+      "quantity": 3,
+      "detail": "sdass"
+    },
+    {
+      "id": "45a6",
+      "name": "potol",
+      "price": 4,
+      "category": "alo",
+      "quantity": 3,
+      "detail": "valo"
+    },
+    {
+      "id": "6c85",
+      "name": "[",
+      "price": 1,
+      "category": "p",
+      "quantity": 1,
+      "detail": "p"
+    }
+  ],
+  "auth": [
+    {
+      "id": "1",
+      "name": "Hilsa Fish",
+      "price": 500
+    },
+    {
+      "id": "b7e2",
+      "username": "rokib",
+      "password": "123456",
+      "email": "mdrakib6767@gmail.com",
+      "role": "admin"
+    },
+    {
+      "id": "daec",
+      "username": "rokib",
+      "password": "123456",
+      "email": "mdrakib6767@gmail.com",
+      "role": "buyer"
+    }
+  ]
+}

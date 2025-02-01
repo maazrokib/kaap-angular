@@ -1,0 +1,37 @@
+
+<app-farmer-nav></app-farmer-nav>
+<div class="product-delivery-form container">
+  <h2>Product Delivery Form</h2>
+
+  <form (ngSubmit)="submitDeliveryForm()">
+    <div class="form-group">
+      <label for="productName">Product Name:</label>
+      <input id="productName" type="text" [(ngModel)]="deliveryForm.productName" name="productName" required />
+    </div>
+
+    <div class="form-group">
+      <label for="deliveryAddress">Delivery Address:</label>
+      <input id="deliveryAddress" type="text" [(ngModel)]="deliveryForm.deliveryAddress" name="deliveryAddress" required />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input id="quantity" type="number" [(ngModel)]="deliveryForm.quantity" name="quantity" required />
+    </div>
+
+    <div class="form-group">
+      <label for="deliveryDate">Delivery Date:</label>
+      <input id="deliveryDate" type="date" [(ngModel)]="deliveryForm.deliveryDate" name="deliveryDate" required />
+    </div>
+
+    <div class="form-group">
+      <label for="deliveryContact">Contact Number:</label>
+      <input id="deliveryContact" type="tel" [(ngModel)]="deliveryForm.contactNumber" name="contactNumber" required />
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Delivery Request</button>
+  </form>
+</div>
+
+
+

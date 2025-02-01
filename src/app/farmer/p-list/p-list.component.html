@@ -1,0 +1,61 @@
+
+<div class="container">
+    <h2>Product List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Details</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let products of product">
+          <td>{{ products.name }}</td>
+          <td>{{ products.price }}</td>
+          <td>{{ products.category }}</td>
+          <td>{{ products.quantity }}</td>
+          <td>{{ products.detail }}</td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/farmer/p-edit/',products.id]">Edit</a>&nbsp;
+            <button class="btn btn-danger" (click)="delete(products.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+<app-farmer-dashboard></app-farmer-dashboard>
+
+<!-- <td style="text-align: center;">
+  <a class="btn btn-primary" [routerLink]="['/std/su/',a.id]">Edit</a>&nbsp;
+  <button type="button" (click)="delete(a.id)" class="btn btn-primary">Delete</button>
+</td> -->
+<!-- <div class="table-responsive-sm">
+  <table class="table table-success">
+    <thead>
+      <tr>
+        <th scope="col">Student ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Pass</th>
+        <th scope="col" style="text-align: center;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" *ngFor="let a of stList">
+        <td>{{ a.id }}</td>
+        <td>{{ a.sName }}</td>
+        <td>{{ a.sEmail }}</td>
+        <td>{{ a.sPass }}</td>
+        <td style="text-align: center;">
+          <a class="btn btn-primary" [routerLink]="['/std/su/',a.id]">Edit</a>&nbsp;
+          <button type="button" (click)="delete(a.id)" class="btn btn-primary">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

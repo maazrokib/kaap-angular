@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+<app-farmer-nav></app-farmer-nav>
+<p>Create works!</p>
+<div class="container">
+  <h2>Create Product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input type="text" id="name" formControlName="name" required class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" id="price" formControlName="price" required class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" id="category" formControlName="category" required class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" formControlName="quantity" required class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="detail">Detail</label>
+      <textarea id="detail" formControlName="detail" required class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn submit-btn">Create Product</button>
+  </form>
+</div>
+
