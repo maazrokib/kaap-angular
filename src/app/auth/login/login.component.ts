@@ -44,9 +44,8 @@ export class LoginComponent implements OnInit {
             this.router.navigateByUrl('/farmer/farmer-nav');
           } else if (user.role === 'buyer') {
             this.router.navigateByUrl('/buyer/buyer-nav');
-          } else {
-            this.router.navigateByUrl('/navbar');
-          }
+          } 
+          
         } else {
           alert('Incorrect Username or Password!');
         }

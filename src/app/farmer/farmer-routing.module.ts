@@ -11,6 +11,8 @@ import { PCreateComponent } from './p-create/p-create.component';
 import { PEditComponent } from './p-edit/p-edit.component';
 import { PListComponent } from './p-list/p-list.component';
 import { FarmerNavComponent } from './farmer-nav/farmer-nav.component';
+import { HomeComponent } from './home/home.component';
+import { PcFarmerComponent } from './pc-farmer/pc-farmer.component';
 
 
 
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'order-list', component: OrderListComponent },
   { path: 'p-list', component: PListComponent },
    { path: 'farmer-nav', component: FarmerNavComponent },
+   { path: 'home', component: HomeComponent },
+   { path: 'cetegory', component: PcFarmerComponent },
   { path: '**', redirectTo: 'farmer-dashboard' }, // Wildcard route
 ];
 @NgModule({

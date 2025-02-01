@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./farmer-nav.component.scss']
 })
 export class FarmerNavComponent {
+isLoggedIn: any;
+logout() {
+throw new Error('Method not implemented.');
+}
 
 }

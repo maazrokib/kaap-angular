@@ -52,6 +52,34 @@
       "password": "123456",
       "email": "mdrakib6767@gmail.com",
       "role": "buyer"
+    },
+    {
+      "id": "b56a",
+      "username": "rokib",
+      "password": "123456",
+      "email": "mdrakib6767@gmail.com",
+      "role": "buyer"
+    },
+    {
+      "id": "c219",
+      "username": "rokib",
+      "password": "123456",
+      "email": "mdrakib6767@gmail.com",
+      "role": "buyer"
+    },
+    {
+      "id": "7f71",
+      "username": "rokib",
+      "password": "123456",
+      "email": "mdrakib6767@gmail.com",
+      "role": "buyer"
+    },
+    {
+      "id": "a840",
+      "username": "rokib",
+      "password": "123456",
+      "email": "abc1@gmail.com",
+      "role": "buyer"
     }
   ]
 }

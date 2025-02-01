@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./farmer/farmer.module').then((m) => m.FarmerModule), // Lazy loading for Farmer module
   },
-  { path: '**', redirectTo: 'sign-up' }, // Wildcard route for undefined paths
+
 
 ];
 
