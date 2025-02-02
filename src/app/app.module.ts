@@ -12,6 +12,9 @@ import { HomeComponent } from './auth/home/home.component';
 import { MyproductComponent } from './auth/myproduct/myproduct.component';
 import { PCetegoryComponent } from './auth/p-cetegory/p-cetegory.component';
 import { GelleryComponent } from './auth/gellery/gellery.component';
+import { LoginAdminComponent } from './auth/login-admin/login-admin.component';
+import { LoginBuyerComponent } from './auth/login-buyer/login-buyer.component';
+import { LoginFarmerComponent } from './auth/login-farmer/login-farmer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { GelleryComponent } from './auth/gellery/gellery.component';
     MyproductComponent,
     PCetegoryComponent,
     GelleryComponent,
+    LoginAdminComponent,
+    LoginBuyerComponent,
+    LoginFarmerComponent,
 
 
   ],

@@ -31,7 +31,7 @@ const routes: Routes = [
    { path: 'farmer-nav', component: FarmerNavComponent },
    { path: 'home', component: HomeComponent },
    { path: 'cetegory', component: PcFarmerComponent },
-  { path: '**', redirectTo: 'farmer-dashboard' }, // Wildcard route
+  
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

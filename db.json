@@ -40,45 +40,31 @@
       "price": 500
     },
     {
-      "id": "b7e2",
+      "id": "d5bd",
       "username": "rokib",
       "password": "123456",
       "email": "mdrakib6767@gmail.com",
       "role": "admin"
     },
     {
-      "id": "daec",
-      "username": "rokib",
-      "password": "123456",
-      "email": "mdrakib6767@gmail.com",
-      "role": "buyer"
-    },
-    {
-      "id": "b56a",
-      "username": "rokib",
-      "password": "123456",
-      "email": "mdrakib6767@gmail.com",
-      "role": "buyer"
-    },
-    {
-      "id": "c219",
-      "username": "rokib",
-      "password": "123456",
-      "email": "mdrakib6767@gmail.com",
-      "role": "buyer"
-    },
-    {
-      "id": "7f71",
-      "username": "rokib",
-      "password": "123456",
-      "email": "mdrakib6767@gmail.com",
-      "role": "buyer"
-    },
-    {
-      "id": "a840",
-      "username": "rokib",
+      "id": "b77d",
+      "username": "hasan",
       "password": "123456",
       "email": "abc1@gmail.com",
+      "role": "buyer"
+    },
+    {
+      "id": "d6a0",
+      "username": "maaz",
+      "password": "123456",
+      "email": "maaz@gmail.com",
+      "role": "farmer"
+    },
+    {
+      "id": "64b3",
+      "username": "buyer",
+      "password": "123456",
+      "email": "buyer@gmail.com",
       "role": "buyer"
     }
   ]

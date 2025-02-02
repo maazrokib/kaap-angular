@@ -40,11 +40,11 @@ export class LoginComponent implements OnInit {
           // Role অনুযায়ী Redirect করা
           if (user.role === 'admin') {
             this.router.navigateByUrl('/admin/admin-nav');
+          }else if (user.role === 'buyer') {
+            this.router.navigateByUrl('/buyer/buyer-nav');
           } else if (user.role === 'farmer') {
             this.router.navigateByUrl('/farmer/farmer-nav');
-          } else if (user.role === 'buyer') {
-            this.router.navigateByUrl('/buyer/buyer-nav');
-          } 
+          }  
           
         } else {
           alert('Incorrect Username or Password!');

@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'farmer-list', component: FarmerListComponent },
   { path: 'market-price', component: MrkPriceComponent },
   { path: 'admin-nav', component: AdminNavComponent },
-  { path: '**', redirectTo: 'home' }, // Wildcard route
+  
 ];
 
 @NgModule({

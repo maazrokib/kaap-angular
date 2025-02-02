@@ -10,10 +10,10 @@ import { GelleryComponent } from './auth/gellery/gellery.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
   { path: 'home', component:HomeComponent  },
-  { path: 'login', component:LoginComponent}, // Login route
-  { path: 'sign-up', component: SignUpComponent }, // Sign-up route
+  { path: 'login', component:LoginComponent}, 
+  { path: 'sign-up', component: SignUpComponent },
   { path: 'product', component: MyproductComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'p-category', component: PCetegoryComponent },
@@ -21,25 +21,25 @@ const routes: Routes = [
   {
     path: 'buyer',
     loadChildren: () =>
-      import('./buyer/buyer.module').then((m) => m.BuyerModule), // Lazy loading for Buyer module
+      import('./buyer/buyer.module').then((m) => m.BuyerModule), 
   },
   {
     path: 'admin',
     loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule), // Lazy loading for Admin module
+      import('./admin/admin.module').then((m) => m.AdminModule), 
   },
   {
     path: 'farmer',
     loadChildren: () =>
-      import('./farmer/farmer.module').then((m) => m.FarmerModule), // Lazy loading for Farmer module
+      import('./farmer/farmer.module').then((m) => m.FarmerModule), 
   },
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], // RouterModule.forRoot(routes) যুক্ত করা হয়েছে
-  exports: [RouterModule], // RouterModule এক্সপোর্ট করা হয়েছে
+  imports: [RouterModule.forRoot(routes)], 
+  exports: [RouterModule], 
 })
 export class AppRoutingModule {}
 

@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'order-list', component: OrderListComponent },
   { path: 'feedback-story', component: FeedbackStoryComponent },
   { path: 'buyer-nav', component: BuyerNavComponent },
-  { path: '**', redirectTo: 'buyer-dashboard' },
+ 
 ];
 
 @NgModule({
