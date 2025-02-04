@@ -10,20 +10,20 @@ import { FarmerService } from '../services/farmer.service';
 })
 export class PCreateComponent {
 
-
   constructor(private farmerService: FarmerService, private router: Router) {}
+
   productForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      price: new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required),
-      quantity: new FormControl('', Validators.required),
-      detail: new FormControl('', Validators.required),
-    });
-  
+      price: new FormControl('', [Validators.required, ]),
+      categoryId: new FormControl('', Validators.required),  // Updated to categoryId to match backend entity
+      quantity: new FormControl('', [Validators.required, ]),
+      description: new FormControl('', Validators.required),  // Updated to description to match backend entity
+  });
 
   save() {
     if (this.productForm.valid) {
-      this.farmerService.add(this.productForm.value).subscribe(
+      const productData = this.productForm.value;
+      this.farmerService.add(productData).subscribe(
         (res: any) => {
           console.log('Product created successfully:', res);
           this.router.navigateByUrl('/farmer/product-list');

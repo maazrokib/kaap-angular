@@ -66,6 +66,14 @@
       "password": "123456",
       "email": "buyer@gmail.com",
       "role": "buyer"
+    },
+    {
+      "id": "5cb1",
+      "name": "fd",
+      "price": 1,
+      "category": "f",
+      "quantity": 1,
+      "detail": "f"
     }
   ]
 }

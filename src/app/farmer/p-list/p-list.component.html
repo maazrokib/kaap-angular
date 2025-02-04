@@ -16,9 +16,9 @@
         <tr *ngFor="let products of product">
           <td>{{ products.name }}</td>
           <td>{{ products.price }}</td>
-          <td>{{ products.category }}</td>
+          <td>{{ products.categoryId }}</td>
           <td>{{ products.quantity }}</td>
-          <td>{{ products.detail }}</td>
+          <td>{{ products.description }}</td>
           <td>
             <a class="btn btn-primary" [routerLink]="['/farmer/p-edit/',products.id]">Edit</a>&nbsp;
             <button class="btn btn-danger" (click)="delete(products.id)">Delete</button>

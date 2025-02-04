@@ -13,14 +13,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Login Form Initialization
   loginForm: FormGroup = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     remember_me: new FormControl(false),
   });
 
-  userList: any[] = []; // Placeholder for storing fetched user data
+  userList: any[] = [];
 
   login() {
     if (this.loginForm.valid) {
@@ -34,18 +33,16 @@ export class LoginComponent implements OnInit {
         );
 
         if (user) {
-          // ইউজার ইনফো লোকাল স্টোরেজে সেট করা
-          this.authService.saveUser(user.username, user.role, user.password, this.loginForm.value.remember_me);
+          this.authService.saveUser(user.username, user.email, user.role, user.password);
 
-          // Role অনুযায়ী Redirect করা
           if (user.role === 'admin') {
             this.router.navigateByUrl('/admin/admin-nav');
-          }else if (user.role === 'buyer') {
+          } else if (user.role === 'buyer') {
             this.router.navigateByUrl('/buyer/buyer-nav');
           } else if (user.role === 'farmer') {
             this.router.navigateByUrl('/farmer/farmer-nav');
-          }  
-          
+          }
+
         } else {
           alert('Incorrect Username or Password!');
         }

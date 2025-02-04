@@ -28,7 +28,7 @@ export class SignUpComponent {
         (response) => {
           console.log('User registered successfully:', response);
 
-          // ✅ লোকাল স্টোরেজে সংরক্ষণ (password সহ)
+          // ✅ ইউজারের তথ্য লোকাল স্টোরেজে সংরক্ষণ
           this.authService.saveUser(formData.username, formData.email, formData.role, formData.password);
 
           // ✅ লগইন স্টেট সেট করুন
