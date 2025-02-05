@@ -21,7 +21,7 @@ export class ProfileComponent {
   // Handle form submission
   submitProfileForm() {
     console.log('Farmer Profile Submitted:', this.profileForm);
-    // You can handle the form submission here (send data to a server or local storage)
+    // Handle form submission (e.g., send data to a server or store in local storage)
     alert('Farmer profile saved successfully!');
     // Clear the form after submission
     this.profileForm = {

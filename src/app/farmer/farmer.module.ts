@@ -15,6 +15,9 @@ import { PListComponent } from './p-list/p-list.component';
 import { FarmerNavComponent } from './farmer-nav/farmer-nav.component';
 import { HomeComponent } from './home/home.component';
 import { PcFarmerComponent } from './pc-farmer/pc-farmer.component';
+import { FarmerofferComponent } from './farmeroffer/farmeroffer.component';
+import { FarmerofferlistComponent } from './farmerofferlist/farmerofferlist.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 
 
@@ -32,6 +35,9 @@ import { PcFarmerComponent } from './pc-farmer/pc-farmer.component';
     FarmerNavComponent,
     HomeComponent,
     PcFarmerComponent,
+    FarmerofferComponent,
+    FarmerofferlistComponent,
+    ProfileEditComponent,
   ],
   imports: [
     CommonModule,

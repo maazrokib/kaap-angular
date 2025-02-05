@@ -1,0 +1,17 @@
+<div class="offer-list container">
+  <h2>Special Offers</h2>
+  <div *ngFor="let offer of offers" class="offer-card">
+    <div class="offer-card-header">
+      <h3>{{ offer.productName }}</h3>
+      <img [src]="offer.imageUrl" alt="{{ offer.productName }}" class="product-image">
+    </div>
+    <div class="offer-card-body">
+      <p>{{ offer.description }}</p>
+      <p><strong>Price:</strong> {{ offer.price }} BDT</p>
+      <p><strong>Stock:</strong> {{ offer.stockQuantity }} kg</p>
+      <p><strong>Seller:</strong> {{ offer.sellerName }}</p>
+      <p><strong>Offer Valid Until:</strong> {{ offer.validUntil | date:'yyyy-MM-dd' }}</p>
+      <p><strong>Discount:</strong> {{ offer.discount }}%</p>
+    </div>
+  </div>
+</div>
