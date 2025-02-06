@@ -13,3 +13,35 @@
   padding: 20px;
   margin-bottom: 20px;
 }
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.dropdown {
+  display: block;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.dropdown a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}

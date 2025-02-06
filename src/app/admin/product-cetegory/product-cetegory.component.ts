@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ProductCetegoryComponent {
 
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 }

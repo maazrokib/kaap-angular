@@ -1,48 +1,53 @@
-<app-farmer-dashboard></app-farmer-dashboard>
-<body>
-  <div class="profile-container">
-    <!-- Profile Header -->
-    <div class="profile-header">
-      <div class="profile-img-container">
-        <img src="https://cdn.dhakapost.com/media/imgAll/BG/2022January/meherpur-3-20220208082953.jpg" alt="Farmer Image" class="profile-img">
-      </div>
-      <div class="profile-info">
-        <h1 class="profile-name">md mahbub</h1>
-        <p class="profile-username">mdmahbub</p>
-        <p class="profile-email">mdmahbubgmail.com</p>
-        <p class="phone">01795719389</p>
-      </div>
-    </div>
+<div class="form-container">
+  <h2>Farmer Information Form</h2>
 
-    <!-- Profile Details -->
-    <div class="profile-details">
-      <h2>Farmer Information</h2>
-      <div class="details-item">
-        <span class="label">Location:</span>
-        <span class="value">Meherpur, Bangladesh</span>
-      </div>
-      <div class="details-item">
-        <span class="label">Joined:</span>
-        <span class="value">March 2022</span>
-      </div>
-      <div class="details-item">
-        <span class="label">Total Products cetegory</span>
-        <span class="value">5</span>
-      </div>
-      <div class="details-item">
-        <span class="label">Specialization:</span>
-        <span class="value">Organic Vegetables & Fruits</span>
-      </div>
-      <div class="details-item">
-        <span class="label">Social Media Links:</span>
-        <span class="value">https://github.com/maazrokib/kaap-angular</span>
-      </div>
-    </div>
-
-    <!-- Edit Button -->
-    <div class="profile-actions">
-      <button class="btn-edit">Edit Profile</button>
-    </div>
-
+  <!-- Profile Image Upload -->
+  <div class="profile-img-container">
+    <label for="profileImage">
+      <img *ngIf="farmer.image" [src]="farmer.image" alt="Profile Image" class="profile-img">
+      <div *ngIf="!farmer.image" class="upload-placeholder">Upload Image</div>
+    </label>
+    <input type="file" id="profileImage" (change)="onImageUpload($event)">
   </div>
-</body>
+
+  <!-- Farmer Input Form -->
+  <form *ngIf="isEditing" (ngSubmit)="saveFarmer()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="farmer.name" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="farmer.email" name="email" required>
+
+    <label>Phone:</label>
+    <input type="text" [(ngModel)]="farmer.phone" name="phone" required>
+
+    <label>Location:</label>
+    <input type="text" [(ngModel)]="farmer.location" name="location" required>
+
+    <label>Specialization:</label>
+    <input type="text" [(ngModel)]="farmer.specialization" name="specialization" required>
+
+    <label>Joined Date:</label>
+    <input type="date" [(ngModel)]="farmer.joinedDate" name="joinedDate" required>
+
+    <label>Social Media Links:</label>
+    <input type="text" [(ngModel)]="farmer.socialMedia" name="socialMedia" required>
+
+    <button type="submit" class="btn-save">{{ isNew ? 'Save' : 'Update' }}</button>
+  </form>
+
+  <!-- Display Farmer Info -->
+  <div *ngIf="!isEditing">
+    <h3>Farmer Profile</h3>
+    <img *ngIf="farmer.image" [src]="farmer.image" alt="Profile Image" class="profile-img">
+    <p><strong>Name:</strong> {{ farmer.name }}</p>
+    <p><strong>Email:</strong> {{ farmer.email }}</p>
+    <p><strong>Phone:</strong> {{ farmer.phone }}</p>
+    <p><strong>Location:</strong> {{ farmer.location }}</p>
+    <p><strong>Specialization:</strong> {{ farmer.specialization }}</p>
+    <p><strong>Joined Date:</strong> {{ farmer.joinedDate }}</p>
+    <p><strong>Social Media Links:</strong> <a [href]="farmer.socialMedia" target="_blank">{{ farmer.socialMedia }}</a></p>
+
+    <button class="btn-edit" (click)="editFarmer()">Edit</button>
+  </div>
+</div>

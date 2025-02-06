@@ -7,44 +7,39 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
-  // Profile form model
-  profileForm = {
-    farmerName: '',
-    farmName: '',
-    location: '',
+  isEditing = true;
+  isNew = true;
+
+  farmer = {
+    name: '',
     email: '',
     phone: '',
-    farmSize: 0,
-    farmImage: ''
+    location: '',
+    specialization: '',
+    joinedDate: '',
+    socialMedia: '',
+    image: ''
   };
 
-  // Handle form submission
-  submitProfileForm() {
-    console.log('Farmer Profile Submitted:', this.profileForm);
-    // Handle form submission (e.g., send data to a server or store in local storage)
-    alert('Farmer profile saved successfully!');
-    // Clear the form after submission
-    this.profileForm = {
-      farmerName: '',
-      farmName: '',
-      location: '',
-      email: '',
-      phone: '',
-      farmSize: 0,
-      farmImage: ''
-    };
+  saveFarmer() {
+    this.isEditing = false;
+    this.isNew = false;
   }
 
-  // Handle image selection
-  onFileChange(event: any) {
+  editFarmer() {
+    this.isEditing = true;
+  }
+
+  onImageUpload(event: any) {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
-      reader.onload = () => {
-        const imageUrl = reader.result as string;
-        this.profileForm.farmImage = imageUrl; // Set the selected image to form model
+      reader.onload = (e: any) => {
+        this.farmer.image = e.target.result;
       };
       reader.readAsDataURL(file);
     }
   }
 }
+
+  

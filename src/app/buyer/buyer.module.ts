@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PCreateComponent } from './p-create/p-create.component';
 import { PEditComponent } from './p-edit/p-edit.component';
 import { BuyerNavComponent } from './buyer-nav/buyer-nav.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BuyerNavComponent } from './buyer-nav/buyer-nav.component';
     FeedbackStoryComponent,
     PCreateComponent,
     PEditComponent,
-    BuyerNavComponent
+    BuyerNavComponent,
+    ProfileEditComponent
   ],
   imports: [
     CommonModule,

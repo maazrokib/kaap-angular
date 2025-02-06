@@ -1,114 +1,175 @@
-$primary-color: #3498db;
-$secondary-color: #2c3e50;
-$light-bg: #ecf0f1;
-$card-bg: #ffffff;
-$text-color: #333;
-$border-radius: 8px;
-
-body {
-  font-family: 'Arial', sans-serif;
+/* ======= Base Styles ======= */
+* {
   margin: 0;
   padding: 0;
-  background-color: $light-bg;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.profile-container {
-  background-color: $card-bg;
-  width: 90%;
-  max-width: 900px;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+body {
+  background-color: #f4f4f9;
+}
+
+/* ======= Form Container ======= */
+.form-container {
+  max-width: 500px;
+  background: #ffffff;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.profile-header {
+h2, h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* ======= Profile Image Upload ======= */
+.profile-img-container {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-img-container:hover {
+  transform: scale(1.05);
+}
+
+.profile-img-container label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-placeholder {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  flex-direction: column;
+  background: #f3f3f3;
+  color: #777;
+  font-size: 14px;
+}
+
+#profileImage {
+  display: none;
+}
+
+/* ======= Form Fields ======= */
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ======= Buttons ======= */
+.btn-save, .btn-edit {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-save {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+}
+
+.btn-save:hover {
+  background: linear-gradient(45deg, #0056b3, #003f7f);
+}
+
+.btn-edit {
+  background: linear-gradient(45deg, #28a745, #218838);
+}
+
+.btn-edit:hover {
+  background: linear-gradient(45deg, #218838, #1e7e34);
+}
+
+/* ======= Display Farmer Info ======= */
+.farmer-info {
+  text-align: left;
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.farmer-info p {
+  font-size: 15px;
+  color: #333;
+  margin: 8px 0;
+}
+
+.farmer-info strong {
+  color: #007bff;
+}
+
+.farmer-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.farmer-info a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%;
+  }
 
   .profile-img-container {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 100px;
+    height: 100px;
   }
 
-  .profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .profile-info {
-    h1 {
-      font-size: 2rem;
-      color: $secondary-color;
-    }
-
-    .profile-username {
-      color: $primary-color;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    .profile-email {
-      color: $text-color;
-      font-size: 1rem;
-    }
-  }
-}
-
-.profile-details {
-  background-color: $light-bg;
-  border-radius: $border-radius;
-  padding: 1rem;
-  margin-bottom: 2rem;
-
-  h2 {
-    font-size: 1.5rem;
-    color: $secondary-color;
-    margin-bottom: 1rem;
-  }
-
-  .details-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #ddd;
-
-    .label {
-      font-weight: bold;
-      color: $secondary-color;
-    }
-
-    .value {
-      color: $text-color;
-    }
-  }
-}
-
-.profile-actions {
-  text-align: center;
-  .btn-edit {
-    background-color: $primary-color;
-    color: #fff;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: $border-radius;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
+  .btn-save, .btn-edit {
+    font-size: 14px;
+    padding: 10px;
   }
 }
