@@ -1,4 +1,3 @@
-<app-farmer-dashboard></app-farmer-dashboard>
 <div class="container">
     <h2>Product List</h2>
     <table class="table">
@@ -8,24 +7,24 @@
           <th>Price</th>
           <th>Category</th>
           <th>Quantity</th>
-          <th>Details</th>
+          <th>Condition</th>
+          <th>Image</th> <!-- Added column for displaying image -->
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let products of product">
-          <td>{{ products.name }}</td>
-          <td>{{ products.price }}</td>
-          <td>{{ products.categoryId }}</td>
-          <td>{{ products.quantity }}</td>
-          <td>{{ products.description }}</td>
+        <tr *ngFor="let product of product">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.categoryId }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.productCondition }}</td>
+          <td><img [src]="product.imageUrl" alt="{{ product.name }}" width="100" /></td> <!-- Display image -->
           <td>
-            <a class="btn btn-primary" [routerLink]="['/farmer/p-edit/',products.id]">Edit</a>&nbsp;
-            <button class="btn btn-danger" (click)="delete(products.id)">Delete</button>
+            <a class="btn btn-primary" [routerLink]="['/farmer/p-edit/', product.id]">Edit</a>&nbsp;
+            <button class="btn btn-danger" (click)="delete(product.id)">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
-
-
+</div>

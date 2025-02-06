@@ -1,46 +1,38 @@
-<app-admin-dashboard></app-admin-dashboard>
+<div class="contract-container">
+  <h2>Contract with Us</h2>
 
-<div class="contract-container" container>
-  <h2>Contact Us</h2>
+  <!-- Farmer Information -->
+  <div class="farmer-info">
 
-  <!-- Contact form -->
-  <form (ngSubmit)="submitForm()" class="contract-form">
+    <p><strong>Email:</strong> {{ farmer.email }}</p>
+    <p><strong>Phone:</strong>
+      <span class="phone-number" (click)="makeCall(farmer.phone)">
+        {{ farmer.phone }}
+      </span>
+      <i class="fas fa-phone-alt" (click)="makeCall(farmer.phone)"></i>
+    </p>
+  </div>
 
-    <!-- Name -->
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" [(ngModel)]="contactForm.name" name="name" required />
+  <!-- Message Form -->
+  <div class="message-form">
+    <h3>Send a Message</h3>
+    <textarea [(ngModel)]="message" placeholder="Type your message here..." rows="5"></textarea>
+
+    <div class="file-upload">
+      <input type="file" (change)="onImageUpload($event)">
     </div>
 
-    <!-- Email -->
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" [(ngModel)]="contactForm.email" name="email" required />
-    </div>
+    <button (click)="sendMessage()">Send Message</button>
+  </div>
 
-    <!-- Phone -->
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" [(ngModel)]="contactForm.phone" name="phone" required />
-    </div>
-
-    <!-- Message -->
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" [(ngModel)]="contactForm.message" name="message" rows="5" required></textarea>
-    </div>
-
-    <!-- Role (Buyer or Seller) -->
-    <div class="form-group">
-      <label for="role">I am a</label>
-      <select id="role" [(ngModel)]="contactForm.role" name="role">
-        <option value="buyer">Buyer</option>
-        <option value="seller">Seller</option>
-      </select>
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit">Send Message</button>
-  </form>
+  <!-- Display Sent Messages -->
+  <div *ngIf="sentMessages.length > 0" class="sent-messages">
+    <h3>Messages</h3>
+    <ul>
+      <li *ngFor="let msg of sentMessages">
+        <p><strong>{{ msg.sender }}:</strong> {{ msg.text }}</p>
+        <img *ngIf="msg.image" [src]="msg.image" alt="Sent Image" class="message-image"/>
+      </li>
+    </ul>
+  </div>
 </div>
-

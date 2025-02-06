@@ -1,16 +1,18 @@
+
+<app-farmer-dashboard></app-farmer-dashboard>
 <div class="form-container">
   <h2>Farmer Information Form</h2>
 
   <!-- Profile Image Upload -->
   <div class="profile-img-container">
     <label for="profileImage">
-      <img *ngIf="farmer.image" [src]="farmer.image" alt="Profile Image" class="profile-img">
-      <div *ngIf="!farmer.image" class="upload-placeholder">Upload Image</div>
+      <img *ngIf="farmer.profilePicture" [src]="farmer.profilePicture" alt="Profile Image" class="profile-img">
+      <div *ngIf="!farmer.profilePicture" class="upload-placeholder">Upload Image</div>
     </label>
-    <input type="file" id="profileImage" (change)="onImageUpload($event)">
+    <input type="file" id="profileImage" (change)="onImageUpload($event)" *ngIf="isEditing">
   </div>
 
-  <!-- Farmer Input Form -->
+  <!-- Farmer Input Form (Editable Form) -->
   <form *ngIf="isEditing" (ngSubmit)="saveFarmer()">
     <label>Name:</label>
     <input type="text" [(ngModel)]="farmer.name" name="name" required>
@@ -21,33 +23,38 @@
     <label>Phone:</label>
     <input type="text" [(ngModel)]="farmer.phone" name="phone" required>
 
+    <label>Products Type:</label>
+    <input type="text" [(ngModel)]="farmer.productsItems" name="productsItems" required>
+
+    <label>Farm Size:</label>
+    <input type="number" [(ngModel)]="farmer.farmSize" name="farmSize" required>
+
+    <label>Experience:</label>
+    <input type="text" [(ngModel)]="farmer.experience" name="experience" required>
+
     <label>Location:</label>
     <input type="text" [(ngModel)]="farmer.location" name="location" required>
 
-    <label>Specialization:</label>
-    <input type="text" [(ngModel)]="farmer.specialization" name="specialization" required>
+    <label>Join Date:</label>
+    <input type="date" [(ngModel)]="farmer.joined" name="joined" required>
 
-    <label>Joined Date:</label>
-    <input type="date" [(ngModel)]="farmer.joinedDate" name="joinedDate" required>
-
-    <label>Social Media Links:</label>
-    <input type="text" [(ngModel)]="farmer.socialMedia" name="socialMedia" required>
-
-    <button type="submit" class="btn-save">{{ isNew ? 'Save' : 'Update' }}</button>
+    <button type="submit" class="btn-save">Save</button>
   </form>
 
-  <!-- Display Farmer Info -->
+  <!-- Display Farmer Info (Non-editable View Mode) -->
   <div *ngIf="!isEditing">
     <h3>Farmer Profile</h3>
-    <img *ngIf="farmer.image" [src]="farmer.image" alt="Profile Image" class="profile-img">
+    <img *ngIf="farmer.profilePicture" [src]="farmer.profilePicture" alt="Profile Image" class="profile-img">
     <p><strong>Name:</strong> {{ farmer.name }}</p>
     <p><strong>Email:</strong> {{ farmer.email }}</p>
     <p><strong>Phone:</strong> {{ farmer.phone }}</p>
-    <p><strong>Location:</strong> {{ farmer.location }}</p>
-    <p><strong>Specialization:</strong> {{ farmer.specialization }}</p>
-    <p><strong>Joined Date:</strong> {{ farmer.joinedDate }}</p>
-    <p><strong>Social Media Links:</strong> <a [href]="farmer.socialMedia" target="_blank">{{ farmer.socialMedia }}</a></p>
 
+    <p><strong>Products Type:</strong> {{ farmer.productsItems }}</p>
+
+    <p><strong>Farm Size:</strong> {{ farmer.farmSize }} Acres</p>
+    <p><strong>Experience:</strong> {{ farmer.experience }}</p>
+    <p><strong>Location:</strong> {{ farmer.location }}</p>
+    <p><strong>Join Date:</strong> {{ farmer.joined | date }}</p>
     <button class="btn-edit" (click)="editFarmer()">Edit</button>
   </div>
 </div>

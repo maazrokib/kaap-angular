@@ -5,32 +5,33 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FarmerService {
-  constructor(private http: HttpClient) {}
-  // private url = "http://localhost:3000/auth";
-  // Spring API URL
-  url = "http://localhost:8080/api/farmerproducts";
 
-  // নতুন ফার্মার প্রোডাক্ট অ্যাড করা
-  add(val: any) {
-    return this.http.post(this.url, val);
+
+  private url = "http://localhost:3000/create";  
+
+  constructor(private http: HttpClient) {}
+
+  // Add product with image upload
+  add(formData: FormData) {
+    return this.http.post(this.url, formData);
   }
 
-  // সমস্ত ফার্মার প্রোডাক্ট নেওয়া
+  // Get all products
   getAll() {
     return this.http.get(this.url);
   }
 
-  // ফার্মার প্রোডাক্ট ডিলিট করা
+  // Delete a product
   delete(id: any) {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  // ফার্মার প্রোডাক্ট ID অনুযায়ী নেওয়া
+  // Get product by ID
   getById(id: any) {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  // ফার্মার প্রোডাক্ট আপডেট করা
+  // Update product
   update(val: any) {
     return this.http.put(`${this.url}/${val.id}`, val);
   }
