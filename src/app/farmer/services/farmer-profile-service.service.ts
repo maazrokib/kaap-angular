@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FarmerProfile } from 'src/app/model/profile.ts';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class FarmerProfileService {
-  private apiUrl = 'http://localhost:3000/auth';   // Update this URL to match your backend's API
-
+  // private apiUrl = 'http://localhost:8080/api/farmerprofiles';  
+  
+  private apiUrl = 'http://localhost:3000/auth'; 
   constructor(private http: HttpClient) {}
 
   // Fetch Farmer by ID

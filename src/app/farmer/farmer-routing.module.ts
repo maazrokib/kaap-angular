@@ -16,6 +16,7 @@ import { PcFarmerComponent } from './pc-farmer/pc-farmer.component';
 import { FarmerofferComponent } from './farmeroffer/farmeroffer.component';
 import { FarmerofferlistComponent } from './farmerofferlist/farmerofferlist.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { OfferEditComponent } from './offer-edit/offer-edit.component';
 
 
 
@@ -37,6 +38,7 @@ const routes: Routes = [
    { path: 'offer', component: FarmerofferComponent },
    { path: 'offerlist', component: FarmerofferlistComponent },
    { path: 'edit', component: ProfileEditComponent },
+   { path: 'offer-edit/:id', component: OfferEditComponent},
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

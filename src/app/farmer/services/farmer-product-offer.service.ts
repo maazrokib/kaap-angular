@@ -1,34 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // HttpClient ইনপোর্ট করা হচ্ছে
-import { Observable } from 'rxjs'; // Observable ইনপোর্ট করা হচ্ছে
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FarmerProductOfferService {
+  private apiUrl = 'http://localhost:3000/auth'; 
 
-  // API URL যেখানে আপনি অফার ডেটা পাবেন
-  private apiUrl = 'http://localhost:8080/api/farmerproductoffers';
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  // সব অফার পাওয়ার জন্য মেথড
+  // Get all offers
   getAllOffers(): Observable<any> {
-    return this.httpClient.get(this.apiUrl); // GET অনুরোধ পাঠানো হচ্ছে
+    return this.httpClient.get(this.apiUrl);
   }
 
-  // একটি নতুন অফার তৈরি করার জন্য মেথড
+  // Create a new offer
   createOffer(offerData: any): Observable<any> {
-    return this.httpClient.post(this.apiUrl, offerData); // POST অনুরোধ পাঠানো হচ্ছে
+    return this.httpClient.post(this.apiUrl, offerData);
   }
 
-  // একটি অফার আপডেট করার জন্য মেথড
+  // Update an offer
   updateOffer(offerId: number, offerData: any): Observable<any> {
-    return this.httpClient.put(`${this.apiUrl}/${offerId}`, offerData); // PUT অনুরোধ পাঠানো হচ্ছে
+    return this.httpClient.put(`${this.apiUrl}/${offerId}`, offerData);
   }
 
-  // একটি অফার মুছে ফেলানোর জন্য মেথড
+  // Delete an offer
   deleteOffer(offerId: number): Observable<any> {
-    return this.httpClient.delete(`${this.apiUrl}/${offerId}`); // DELETE অনুরোধ পাঠানো হচ্ছে
+    return this.httpClient.delete(`${this.apiUrl}/${offerId}`);
   }
 }

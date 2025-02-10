@@ -1,38 +1,37 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FarmerService {
-
-
-  private url = "http://localhost:3000/create";  
+  private apiUrl = 'http://localhost:3000/auth'; // Spring Boot API URL
 
   constructor(private http: HttpClient) {}
 
-  // Add product with image upload
-  add(formData: FormData) {
-    return this.http.post(this.url, formData);
+  // পণ্য যোগ করুন
+  add(product: any): Observable<any> {
+    return this.http.post(this.apiUrl, product);
   }
 
-  // Get all products
-  getAll() {
-    return this.http.get(this.url);
+  // সব পণ্য পান
+  getAll(): Observable<any> {
+    return this.http.get(this.apiUrl);
   }
 
-  // Delete a product
-  delete(id: any) {
-    return this.http.delete(`${this.url}/${id}`);
+  // নির্দিষ্ট পণ্য পান (ID দ্বারা)
+  getById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  // Get product by ID
-  getById(id: any) {
-    return this.http.get(`${this.url}/${id}`);
+  // পণ্য আপডেট করুন
+  update(id: number, product: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, product);
   }
 
-  // Update product
-  update(val: any) {
-    return this.http.put(`${this.url}/${val.id}`, val);
+  // পণ্য ডিলিট করুন
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

@@ -7,7 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BuyerNavComponent } from './buyer-nav/buyer-nav.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'buyer-dashboard', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: 'order-list', pathMatch: 'full' }, // Default route
   { path: 'buyer-dashboard', component: BuyerDashboardComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'order-list', component: OrderListComponent },

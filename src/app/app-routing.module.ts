@@ -7,6 +7,8 @@ import { MyproductComponent } from './auth/myproduct/myproduct.component';
 import { NavbarComponent } from './auth/navbar/navbar.component';
 import { PCetegoryComponent } from './auth/p-cetegory/p-cetegory.component';
 import { GelleryComponent } from './auth/gellery/gellery.component';
+import { HomeCreateComponent } from './auth/home-create/home-create.component';
+import { HomeEditComponent } from './auth/home-edit/home-edit.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'p-category', component: PCetegoryComponent },
   { path: 'gellery', component: GelleryComponent },
+  { path: 'home-create', component: HomeCreateComponent },
+  { path: 'Homeedit', component: HomeEditComponent },
   {
     path: 'buyer',
     loadChildren: () =>

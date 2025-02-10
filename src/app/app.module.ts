@@ -15,6 +15,8 @@ import { GelleryComponent } from './auth/gellery/gellery.component';
 import { LoginAdminComponent } from './auth/login-admin/login-admin.component';
 import { LoginBuyerComponent } from './auth/login-buyer/login-buyer.component';
 import { LoginFarmerComponent } from './auth/login-farmer/login-farmer.component';
+import { HomeCreateComponent } from './auth/home-create/home-create.component';
+import { HomeEditComponent } from './auth/home-edit/home-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LoginFarmerComponent } from './auth/login-farmer/login-farmer.component
     LoginAdminComponent,
     LoginBuyerComponent,
     LoginFarmerComponent,
+    HomeCreateComponent,
+    HomeEditComponent,
 
 
   ],

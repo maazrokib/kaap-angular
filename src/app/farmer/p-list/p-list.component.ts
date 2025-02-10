@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FarmerService } from '../services/farmer.service'; // Make sure the correct service is imported
+import { FarmerService } from '../services/farmer.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./p-list.component.scss'],
 })
 export class PListComponent implements OnInit {
-
-  productList!: any[]; // Define product list type
-product: any;
+  productList: any[] = [];
 
   constructor(private farmerService: FarmerService, private router: Router) {}
 
   ngOnInit(): void {
-    // Fetch the list of products from the backend
+    this.loadProducts();
+  }
+
+  loadProducts() {
     this.farmerService.getAll().subscribe(
       (res: any) => {
         this.productList = res;
-        console.log('Product List:', this.productList);
       },
       (error) => {
         console.error('Error fetching product list:', error);
@@ -27,17 +27,15 @@ product: any;
     );
   }
 
-  delete(id: any): void {
+  editProduct(id: number) {
+    this.router.navigate(['/farmer/p-edit', id]);
+  }
+
+  delete(id: number) {
     if (confirm('Are you sure you want to delete this product?')) {
-      this.farmerService.delete(id).subscribe(
-        (res: any) => {
-          console.log('Product deleted successfully:', res);
-          this.ngOnInit(); // Refresh the product list after deletion
-        },
-        (error) => {
-          console.error('Error deleting product:', error);
-        }
-      );
+      this.farmerService.delete(id).subscribe(() => {
+        this.loadProducts();
+      });
     }
   }
 }
