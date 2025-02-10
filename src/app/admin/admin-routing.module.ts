@@ -13,7 +13,7 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 const routes: Routes = [
   { path: '', redirectTo: 'admin-dashboard', pathMatch: 'full' },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component:HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contract', component: ContractComponent },
   { path: 'product-category', component: ProductCetegoryComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'farmer-list', component: FarmerListComponent },
   { path: 'market-price', component: MrkPriceComponent },
   { path: 'admin-nav', component: AdminNavComponent },
-  
+
 ];
 
 @NgModule({

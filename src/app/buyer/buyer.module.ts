@@ -12,6 +12,8 @@ import { PCreateComponent } from './p-create/p-create.component';
 import { PEditComponent } from './p-edit/p-edit.component';
 import { BuyerNavComponent } from './buyer-nav/buyer-nav.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { HomeBuyerComponent } from './home-buyer/home-buyer.component';
+import { BuyerComponent } from './buyer.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { ProfileEditComponent } from './profile-edit/profile-edit.component';
     PCreateComponent,
     PEditComponent,
     BuyerNavComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    HomeBuyerComponent,
+    BuyerComponent
   ],
   imports: [
     CommonModule,

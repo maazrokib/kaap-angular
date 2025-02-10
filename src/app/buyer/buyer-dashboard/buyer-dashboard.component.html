@@ -1,18 +1,5 @@
-<!-- 
-<div class="sidebar">
-    <div class="logo">Buyer Panel</div>
-    <ul>
-      <li>>Profile</a></li>
-      <li><a routerLink="/buyer/order-list">Your Delevery</a></li>
-      <li><a routerLink="/buyer/order-list">Order history</a></li>
-      <li><a routerLink="/buyer/feedback-story">Feedback Story</a></li>
-      <li><a routerLink="/buyer/order-list">Contract Us</a></li>
-      <li><a routerLink="/buyer/buyer-nav">Contract Us</a></li>
-    </ul>
-  </div>
- -->
+<!-- <router-outlet></router-outlet>
 <app-buyer-nav></app-buyer-nav>
-
 <body>
   <div class="sidebar">
     <div class="logo"> <img src="https://cdn-icons-png.flaticon.com/512/9203/9203764.png" alt="Profile Picture"
@@ -21,23 +8,28 @@
     <div class="sidebar-content">
       <ul class="nav">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/buyer/profile" class="nav-link">
             <i class="fas fa-home"></i>Profile
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/buyer/profile" class="nav-link">
-            <i class="fas fa-chart-line"></i>Order history
+          <a routerLink="/buyer/order-list" class="nav-link">
+            <i class="fas fa-chart-line"></i>Order list
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/buyer/feedback-story" class="nav-link">
             <i class="fas fa-shopping-cart"></i> Feedback Story
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fas fa-box"></i> WishList
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/buyer/contract" class="nav-link">
+            <i class="fas fa-box"></i> Contract
           </a>
         </li>
       </ul>
@@ -54,4 +46,4 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
-</body>
+</body> -->

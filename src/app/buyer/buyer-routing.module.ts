@@ -5,16 +5,20 @@ import { FeedbackStoryComponent } from './feedback-story/feedback-story.componen
 import { OrderListComponent } from './order-list/order-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BuyerNavComponent } from './buyer-nav/buyer-nav.component';
+import { HomeBuyerComponent } from './home-buyer/home-buyer.component';
+import { BuyerComponent } from './buyer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'order-list', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: 'buyer-dashboard', pathMatch: 'full' }, // Default route
   { path: 'buyer-dashboard', component: BuyerDashboardComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'order-list', component: OrderListComponent },
   { path: 'feedback-story', component: FeedbackStoryComponent },
-  { path: 'buyer-nav', component: BuyerNavComponent },
- 
+  { path: 'BuyerComponent', component: BuyerComponent },
+  { path: 'home', component: HomeBuyerComponent },
+  { path: 'buyer', component: BuyerComponent },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,28 +1,35 @@
 
 <app-admin-dashboard></app-admin-dashboard>
 
-<head>
-    <title>আমাদের সম্পর্কে</title>
-    <link rel="styleUrlst" href="style.scss">
-  </head>
-  <body>
-    <div class="container">
-      <h1>আমাদের সম্পর্কে</h1>
-      <p>আমরা তাজা ও জৈব খাবার সরবরাহ করি। আমাদের পণ্যগুলি স্থানীয়ভাবে উৎপাদিত এবং স্বাস্থ্যকর।</p>
+<nav>
+  <a routerLink="/g">All cetegorey</a>
+  <a routerLink="/a">Seasonal</a>
+  <a routerLink="/b">Bundle</a>
+  <a routerLink="/c">Newest</a>
+  <a routerLink="/d">Trending</a>
+  <a routerLink="/e">Great Deal</a>
+  <a routerLink="/f">Upcoming</a>
+  <a routerLink="/hge">farmer story</a>
+  <a routerLink="/hg">krishi story</a>
 
-      <div class="section">
-        <h2>বিশেষ অফার</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc justo, sagittis suscipit ultrices.</p>
-      </div>
+</nav>
+<div class="container">
+  <h2 class="text-center">Product List</h2>
 
-      <div class="section">
-        <h2>ফ্রোজেন ফুড</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc justo, sagittis suscipit ultrices.</p>
-      </div>
-
-      <div class="section">
-        <h2>ডিম ও পনির</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc justo, sagittis suscipit ultrices.</p>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <div class="card">
+        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">Category: {{ product.categoryId }}</p>
+          <p class="card-text">Price: {{ product.price | currency }}</p>
+          <p class="card-text">Quantity: {{ product.quantity }}</p>
+          <p class="card-text">Condition: {{ product.productCondition }}</p>
+          <p class="card-text">{{ product.description }}</p>
+          <button (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</div>
