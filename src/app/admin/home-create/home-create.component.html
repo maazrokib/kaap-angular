@@ -1,79 +1,86 @@
-<div class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<app-admin-dashboard></app-admin-dashboard>
+
+  
+  <div class="nav">
       <div class="modal-header">
-        <h5 class="modal-title">Add New Product</h5>
+        <h5 class="modal-title">🛒 Add New Product</h5>
+        <button type="button" class="close" (click)="closeModal()">✖</button>
       </div>
       <div class="modal-body">
         <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-          <!-- Product Name -->
-          <div class="form-group">
-            <label for="name">Product Name</label>
-            <input type="text" id="name" class="form-control" formControlName="name" />
-            <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-danger">
-              Product name is required.
-            </small>
+          <div class="row">
+            <!-- Product Name -->
+            <div class="col-md-6 form-group">
+              <label for="name">📌 Product Name</label>
+              <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter product name" />
+              <small *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="text-danger">
+                Product name is required.
+              </small>
+            </div>
+
+            <!-- Category ID -->
+            <div class="col-md-6 form-group">
+              <label for="categoryId">📂 Category</label>
+              <input type="text" id="categoryId" class="form-control" formControlName="categoryId" placeholder="Enter category" />
+              <small *ngIf="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched" class="text-danger">
+                Category is required.
+              </small>
+            </div>
           </div>
 
-          <!-- Category ID -->
-          <div class="form-group">
-            <label for="categoryId">Category</label>
-            <input type="text" id="categoryId" class="form-control" formControlName="categoryId" />
-            <small *ngIf="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched" class="text-danger">
-              Category is required.
-            </small>
+          <div class="row">
+            <!-- Price -->
+            <div class="col-md-6 form-group">
+              <label for="price">💰 Price</label>
+              <input type="number" id="price" class="form-control" formControlName="price" placeholder="Enter price" />
+              <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
+                Price must be a positive number.
+              </small>
+            </div>
+
+            <!-- Quantity -->
+            <div class="col-md-6 form-group">
+              <label for="quantity">📦 Quantity</label>
+              <input type="number" id="quantity" class="form-control" formControlName="quantity" placeholder="Enter quantity" />
+              <small *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched" class="text-danger">
+                Quantity must be a positive number.
+              </small>
+            </div>
           </div>
 
-          <!-- Price -->
-          <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" id="price" class="form-control" formControlName="price" />
-            <small *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="text-danger">
-              Price must be a positive number.
-            </small>
-          </div>
+          <div class="row">
+            <!-- Condition -->
+            <div class="col-md-6 form-group">
+              <label for="productCondition">⚙ Condition</label>
+              <select id="productCondition" class="form-control" formControlName="productCondition">
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+              </select>
+            </div>
 
-          <!-- Quantity -->
-          <div class="form-group">
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" class="form-control" formControlName="quantity" />
-            <small *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched" class="text-danger">
-              Quantity must be a positive number.
-            </small>
-          </div>
-
-          <!-- Condition -->
-          <div class="form-group">
-            <label for="productCondition">Condition</label>
-            <select id="productCondition" class="form-control" formControlName="productCondition">
-              <option value="New">New</option>
-              <option value="Used">Used</option>
-            </select>
+            <!-- Image URL -->
+            <div class="col-md-6 form-group">
+              <label for="imageUrl">🖼 Image URL</label>
+              <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl" placeholder="Enter image URL" />
+              <small *ngIf="productForm.get('imageUrl')?.invalid && productForm.get('imageUrl')?.touched" class="text-danger">
+                Image URL is required.
+              </small>
+            </div>
           </div>
 
           <!-- Description -->
           <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" class="form-control" formControlName="description"></textarea>
+            <label for="description">📝 Description</label>
+            <textarea id="description" class="form-control" formControlName="description" rows="3" placeholder="Enter product description"></textarea>
             <small *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="text-danger">
               Description is required.
             </small>
           </div>
 
-          <!-- Image URL -->
-          <div class="form-group">
-            <label for="imageUrl">Image URL</label>
-            <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl" />
-            <small *ngIf="productForm.get('imageUrl')?.invalid && productForm.get('imageUrl')?.touched" class="text-danger">
-              Image URL is required.
-            </small>
-          </div>
-
           <!-- Submit Button -->
-          <button type="submit" class="btn btn-success" [disabled]="productForm.invalid">Save</button>
+          <button type="submit" class="btn btn-success btn-block" [disabled]="productForm.invalid">✅ Save Product</button>
         </form>
       </div>
-    </div>
-  </div>
+   
 </div>
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>

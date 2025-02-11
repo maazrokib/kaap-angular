@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { MrkPriceComponent } from './mrk-price/mrk-price.component';
 import { ProductCetegoryComponent } from './product-cetegory/product-cetegory.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { HomeCreateComponent } from './home-create/home-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin-dashboard', pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'farmer-list', component: FarmerListComponent },
   { path: 'market-price', component: MrkPriceComponent },
   { path: 'admin-nav', component: AdminNavComponent },
-
+  { path: 'home-create', component: HomeCreateComponent },
 ];
 
 @NgModule({

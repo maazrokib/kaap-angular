@@ -9,6 +9,9 @@ import { HomeService } from 'src/app/service/home.service';
   styleUrls: ['./home-create.component.scss']
 })
 export class HomeCreateComponent{
+closeModal() {
+throw new Error('Method not implemented.');
+}
   productForm: FormGroup;
 
   constructor(

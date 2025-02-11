@@ -1,135 +1,87 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-  display: flex;
-}
-
-/* Sidebar Styling */
+/* সাইডবারের মূল স্টাইল */
 .sidebar {
   width: 150px;
-  height: 80vh;
-  background-color:rgb(13, 99, 13);
-  color: #fff;
+  height: 100vh;
+  background-color: #1e1e2d; /* গাঢ় রঙ */
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  font-family: 'Arial', sans-serif;
 }
 
+/* লোগো অংশের স্টাইল */
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
   text-align: center;
-  padding: 1px 0;
-  background-color: #19ad39;
-  color: #fff;
+  padding: 20px 0;
+  background-color: #2a2a3d; /* লোগোর ব্যাকগ্রাউন্ড */
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.sidebar-content {
-  flex-grow: 1;
-  padding: 20px;
-  align-items: flex-start;
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 50%; /* ছবি গোলাকার করা */
 }
 
+/* নেভিগেশন মেনুর স্টাইল */
 .nav {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  color: #d4d4d4;
+  padding: 12px 20px;
   text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  background-color: #3a3a4d;
-  color: #fff;
+  color: #ffffff;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link i {
-  margin-right: 10px;
-  font-size: 1.2rem;
+  margin-right: 15px;
+  font-size: 20px;
 }
 
-/* Bottom Content Styling */
+.nav-link:hover {
+  background-color: #4a4a6d; /* হোভার করলে ব্যাকগ্রাউন্ড রঙ পরিবর্তন */
+  color: #ffdd57; /* হোভার করলে টেক্সট রঙ পরিবর্তন */
+  border-radius: 8px; /* সামান্য গোলাকার কোণ */
+}
+
+/* বটম কনটেন্ট (লগআউট সেকশন) */
 .bottom-content {
   padding: 20px;
-  background-color: #2a2a3d;
-  border-top: 1px solid #3a3a4d;
+  background-color: #2a2a3d; /* নিচের অংশের ব্যাকগ্রাউন্ড */
 }
 
 .user-info {
   display: flex;
   align-items: center;
-}
-
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 15px;
-}
-
-.user-details {
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .user-name {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: bold;
-  color: #fff;
 }
 
 .user-link {
-  font-size: 0.9rem;
-  color: #d4d4d4;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+  color: #ffdd57;
+  font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .user-link:hover {
-  color: #fff;
-}
-
-.user-link i {
-  margin-right: 5px;
-}
-
-/* Main Content Styling */
-.content {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-.content h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.content p {
-  font-size: 1rem;
-  color: #666;
+  color: #ffffff; /* হোভার করলে টেক্সট রঙ পরিবর্তন */
 }

@@ -18,6 +18,7 @@ import { FarmerofferComponent } from './farmeroffer/farmeroffer.component';
 import { FarmerofferlistComponent } from './farmerofferlist/farmerofferlist.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { OfferEditComponent } from './offer-edit/offer-edit.component';
+import { HomeFarmerComponent } from './home-farmer/home-farmer.component';
 
 
 
@@ -38,6 +39,7 @@ import { OfferEditComponent } from './offer-edit/offer-edit.component';
     FarmerofferlistComponent,
     ProfileEditComponent,
     OfferEditComponent,
+    HomeFarmerComponent,
   ],
   imports: [
     CommonModule,

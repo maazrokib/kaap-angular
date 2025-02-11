@@ -1,7 +1,7 @@
 /* Header Styling */
 header {
   background-color: #19ad39;
-  padding: 15px;
+  padding: 1px;
 }
 
 .header-container {
@@ -205,4 +205,69 @@ body {
 
 .btn-danger:hover {
   background-color: #c82333;
+}
+
+/* Buyer Dashboard Dropdown Button */
+.buyer-dashboard-btn {
+  background-color: #ffffff;
+  color: #0c0a0a;
+  border: none;
+  padding: 3px 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.buyer-dashboard-btn:hover {
+  background-color: #4a4a6d;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(199, 197, 197, 0.2);
+  border-radius: 5px;
+  z-index: 1000;
+  width: 200px;
+  padding: 10px 0;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* লোগো অংশের স্টাইল */
+.logo {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #19ad39; /* লোগোর ব্যাকগ্রাউন্ড */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 50%; /* ছবি গোলাকার করা */
 }
